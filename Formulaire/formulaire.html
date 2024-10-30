@@ -6,8 +6,20 @@
         <link rel="stylesheet" href="style_f.css">
         <script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
         <script type="text/javascript">
-$('input[type="checkbox"]').on('change', function() {
-   $('input[type="checkbox"]').not(this).prop('checked', false);
+$("input:checkbox").on('click', function() {
+  // in the handler, 'this' refers to the box clicked on
+  var $box = $(this);
+  if ($box.is(":checked")) {
+    // the name of the box is retrieved using the .attr() method
+    // as it is assumed and expected to be immutable
+    var group = "input:checkbox[name='" + $box.attr("name") + "']";
+    // the checked state of the group/box on the other hand will change
+    // and the current value is retrieved using .prop() method
+    $(group).prop("checked", false);
+    $box.prop("checked", true);
+  } else {
+    $box.prop("checked", false);
+  }
 });
          </script>
         <title>Formulaire</title>
@@ -34,8 +46,8 @@ $('input[type="checkbox"]').on('change', function() {
         <input type="text" id="email" title="email">
         <label for="nom">Votre e-mail</label>
         <br>
-        <input type="checkbox" id="homme"><label for="homme">Vous êtes un homme</label>
-        <input type="checkbox" id="femme"><label for="femme">Vous êtes une femme</label>
+        <input name="genre" type="radio" id="homme"><label for="homme">Vous êtes un homme</label>
+        <input name="genre" type="radio" id="femme"><label for="femme">Vous êtes une femme</label>
         <br>
         <select name="metier" id="metier">
             <option value="Analyste">Developpeur</option>
