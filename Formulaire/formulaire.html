@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="fr">
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1" />
+        <link rel="stylesheet" href="style_f.css">
+        <script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
+        <script type="text/javascript">
+$('input[type="checkbox"]').on('change', function() {
+   $('input[type="checkbox"]').not(this).prop('checked', false);
+});
+         </script>
+        <title>Formulaire</title>
+    </head>
+    <body>
+        <h1>Nous lançons une grande enquête sur les anciens stagiaires</h1>
+        <h2>Merci de nous répondre</h2>
+        <br/>
+        <input type="text" id="nom" title="nom">
+        <label for="nom">Votre nom</label>
+        <br>
+        <input type="text" id="prénom" title="prénom">
+        <label for="nom">Votre prénom</label>
+        <br>
+        <input type="text" id="date" title="date">
+        <label for="nom">Votre date de naissance</label>
+        <br>
+        <input type="text" id="adresse" title="adresse">
+        <label for="nom">Votre adresse</label>
+        <br>
+        <input type="text" id="codep" title="code postal">
+        <label for="nom">Votre code postal</label>
+        <br>
+        <input type="text" id="email" title="email">
+        <label for="nom">Votre e-mail</label>
+        <br>
+        <input type="checkbox" id="homme"><label for="homme">Vous êtes un homme</label>
+        <input type="checkbox" id="femme"><label for="femme">Vous êtes une femme</label>
+        <br>
+        <select name="metier" id="metier">
+            <option value="Analyste">Developpeur</option>
+            <option value="Analyste">Analyste</option>
+            <option value="Chef de projet">Chef de projet</option>
+        </select>
+        <br>
+        <input type="text" id="autre" title="autre">
+        <label for="autre">Si vous avez répondu autre, précisez</label>
+        <br/>
+        <select name="metier" id="metier">
+            <option value="1000">< 1000€></option>
+            <option value="1500">> 1000€ et < 1500€</option>
+            <option value="2000">> 1500€ < 2000€</option>
+            <option value="2000_plus">> 2000€</option>
+            </select>
+            <br>
+        <input type="text" id="annee" title="annee">
+        <label for="annee">En quelle année avez vous suivi le stage AFPA</label>
+        <br>
+            <textarea id="defaultTextarea" name="defaultTextarea" rows="5">Vos commentaires</textarea>
+            <br>
+            <h2 style="text-align:left;">Merci d'avoir répondu au questionnaire</h2>
+            <br>
+            <button type="submit">Validez</button> <button type="reset">Annulez</button>
+           </body>
+</html>
